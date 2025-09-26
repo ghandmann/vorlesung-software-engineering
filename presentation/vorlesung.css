@@ -1,0 +1,38 @@
+/* @theme vorlesung */
+
+@import 'gaia';
+
+section {
+    font-size: 24pt;
+}
+section h1, section h2 {
+    color: #566691ff;
+}
+
+section.lead {
+    h1 {
+        font-size: 64pt;
+    }
+}
+section h1 {
+    font-size: 38pt;
+}
+
+section h2 {
+    font-size: 28pt;
+}
+
+section.chapter {
+    h1 {
+        margin-top: 15%;
+    }
+
+    h1, h2 {
+        text-align: center;
+    }
+}
+
+img[alt~="center"] {
+    margin: auto;
+    display: block;
+}
