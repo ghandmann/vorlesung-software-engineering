@@ -242,8 +242,8 @@ Das Konzept von Remote- und Local-Repository sorgt häufig für Verwirrung. Grun
 ## clone
 - Mit `git clone $remoteUrl` kann ein entferntes Repository (z.B. GitHub) lokal geklont werden.
 - Git unterstützt dabei zwei Protokolle: HTTP(S) und SSH.
-  `git clone https://github.com/ghandmann/HS-AlbSig-WebAnwendungen2.git`
-  `git clone git@github.com:ghandmann/HS-AlbSig-WebAnwendungen2.git`
+  `git clone https://github.com/ghandmann/vorlesung-software-engineering.git`
+  `git clone git@github.com:ghandmann/vorlesung-software-engineering.git`
   - HTTPS wird typischerweise nur noch für read-only clones genutzt
 
 ---
