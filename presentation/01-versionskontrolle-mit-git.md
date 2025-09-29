@@ -6,10 +6,9 @@ backgroundImage: url('./images/background.svg')
 
 <!-- _class: lead -->
 
-# Software Engineering
-
+# Versionskontrolle mit git
+## Software Engineering
 ## Sven Eppler
-<br/><br/>
 
 ![width:1100px center](images/sodge-hochschule.png)
 
