@@ -268,8 +268,6 @@ Das Konzept von Remote- und Local-Repository sorgt häufig für Verwirrung. Grun
 ## rm
 - Mit `git rm` können Dateien aus dem Repository gelöscht werden.
 - Mit `git rm --cached $fileName` kann eine Datei aus der staging area entfernt werden, d.H. sie wird nicht mehr zum commit vorgemerkt.
-- Paradox: Hat man eine Datei in der Working-Copy via Dateimanager gelöscht die im Repository eingecheckt war, muss diese Löschung mit `git add $deletedFile` als neue Änderung aufgenommen werden.
-
 ---
 
 # Wichtige Git Kommandos
