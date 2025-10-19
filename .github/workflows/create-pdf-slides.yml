@@ -7,4 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Can we run docker commands?
-        run: docker run --rm marpteam/marp-cli:v4.2.3 --version
+        run: docker run --rm -e MARP_USER="$(id -u):$(id -g)" -v {{ github.workspace }}:/home/marp/app marpteam/marp-cli:v4.2.3 --allow-local-files --pdf presentation/*.md
+      - name: List the results
+        run: ls -la {{ github.workspace }}/presentation
