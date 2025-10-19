@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Can we run docker commands?
-        run: docker run -it --rm marpteam/marp-cli:v4.2.3 --version
+        run: docker run --rm marpteam/marp-cli:v4.2.3 --version
