@@ -1,0 +1,15 @@
+name: Create PDF slides
+on:
+  push:
+    branches: [ main, create-pdf-slide-via-github-actions ]
+jobs:
+  create-pdf-slides:
+    runs-on: ubuntu-latest
+    container:
+      image: marpteam/marp-cli:v4.2.3
+      volumes:
+        - ${{ github.workspace }}:/workspace
+      options: --cpus 1
+    steps:
+      - name: Check if we have the repository mounted
+        run: ls /workspace/presentation/
