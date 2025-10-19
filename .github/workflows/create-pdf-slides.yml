@@ -1,5 +1,8 @@
 name: Create PDF slides
-on: tag
+on:
+  push:
+    tags:
+      - '*'
 jobs:
   create-pdf-slides:
     runs-on: ubuntu-latest
