@@ -5,11 +5,6 @@ on:
 jobs:
   create-pdf-slides:
     runs-on: ubuntu-latest
-    container:
-      image: marpteam/marp-cli:v4.2.3
-      volumes:
-        - ${{ github.workspace }}:/marp-workspace/
-      options: --cpus 1 --entrypoint /bin/bash
     steps:
-      - name: Check if we have the repository mounted
-        run: ls /marp-workspace/presentation/
+      - name: Can we run docker commands?
+        run: docker run -it --rm marpteam/marp-cli:v4.2.3 --version
