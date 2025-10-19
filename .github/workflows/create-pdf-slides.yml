@@ -6,6 +6,8 @@ jobs:
   create-pdf-slides:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
       - name: Debug
         run: ls -la "${{ github.workspace }}"
       - name: Can we run docker commands?
