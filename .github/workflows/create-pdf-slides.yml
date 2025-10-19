@@ -9,7 +9,7 @@ jobs:
       image: marpteam/marp-cli:v4.2.3
       volumes:
         - ${{ github.workspace }}:/marp-workspace/
-      options: --cpus 1 --entrypoint /bIn/bash
+      options: --cpus 1 --entrypoint /bin/bash
     steps:
       - name: Check if we have the repository mounted
         run: ls /marp-workspace/presentation/
