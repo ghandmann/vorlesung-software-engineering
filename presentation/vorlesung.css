@@ -14,6 +14,10 @@ section.lead {
         font-size: 64pt;
     }
 }
+section {
+    padding: 40px;
+    padding-top: 20px;
+}
 section h1 {
     font-size: 38pt;
 }
@@ -24,7 +28,7 @@ section h2 {
 
 section.chapter {
     h1 {
-        margin-top: 15%;
+        margin-top: 20%;
     }
 
     h1, h2 {
