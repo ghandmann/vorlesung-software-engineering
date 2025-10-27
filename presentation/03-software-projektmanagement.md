@@ -13,15 +13,6 @@ backgroundImage: url('./images/background.svg')
 ![width:1100px center](images/sodge-hochschule.png)
 
 ---
-
-# TODO
-
-- Warum klassisches Projektmanagement fehlschlägt
-    - V-Modell, Wasserfallmodel, Spiralmodell, etc.
-- Was modernes Projektmanagement besser macht
-    - Agilität, SCRUM, Kanban
-
----
 <!-- _class: chapter -->
 
 # Was ist Projektmanagement?
