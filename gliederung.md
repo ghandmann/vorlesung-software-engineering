@@ -1,0 +1,77 @@
+# Gliederung
+- Einführung
+- Versionskontrolle mit git
+    - DAG
+    - Commit ID
+    - Commandline Interface
+- Git & GitHub
+    - Feature Branch Workflow
+    - Issues & Merge Requests
+    - Reviews
+- Software Projektmanagement
+    - Klassische Vorgehensmodelle
+        - Wasserfall, V-Modell, Spiralmodell
+    - Moderne Vorgehensmodelle
+        - Agiles Manifest, SCRUM, Kanban
+- Anforderungeanalyse
+    - TBD
+- Programmierparadigmen
+    - Imperative  vs. Deklarativ
+        - Imperative: Schritt für Schritt Anleitung (C++/Python/JavaScript)
+        - Deklarative: Das will ich! (SQL)
+    - Mutablility vs. Immutability
+        - Immutable Data Structures
+            - Implementierung by call-by-value
+                - Teuer bei großen Strukturen
+                - Nesting Nicht trivial: Deep-Copy
+            - Seiteneffektferei
+            - Jede Veränderung erzeugt neue Instanz (vgl. String in Java, C#)
+            - Beispiel: Blockchain
+        - Mutable Data Structures
+            - Implementierung durch call-by-reference
+                - Günstig auch für große Strukturen
+                - Nesting Trivial: Alles sind Referenzen
+            - Seiteneffektbehaftet
+            - Änderungen verändern den Wert für alle die eine Referenz haben
+            - Beispiel: Adressbuch
+    - Funktional vs. Prozedural vs. OOP
+        - Funktionale Sprache (Haskell, F#)
+            - Pure Functions (Seiteneffektfrei!)
+            - Referentielle Transparenz / Memoization
+            - Higher Order Functions
+            - Rekursion
+            - Tail and Head
+            - Composition
+        - Prozedural
+            - Wiederkehrender Code wird in Funktionen (Prozeduren) ausgelagert
+            - Daten und Funktionen existieren getrennt von einander
+            - Unpure Functions (aka. Seiteneffektbehaftet)
+            - Jeder kann jede Funktion aufrufen
+        - OOP Sprachen (Java, C#, C++)
+            - Modellieren der Welt als Objekte
+            - Kapselung der Daten
+            - Klassen, Methoden, Vererbung, Interfaces
+            - Mehrfachvererbung vs. Interfaces
+                - Composition over Inheritence
+                - Diamant-Dilemma
+            - Polymorphismus
+        
+- Softwarearchitekturen
+    - Monolithische
+    - Verteilte
+    - Layered
+    - Event-Driven
+- Domain Driven Design
+    - Fachlichkeit über Technik (vgl. Agiles Manifest)
+    - Ubitquitos Language
+    - Event Storming
+    - Bounded Context
+- Microservice Pattern
+    - Form der Verteilten Architektur
+    - Viele kleine Services
+    - Typischerweise bildet ein Service einen BoundedContext ab
+    - Ermöglicht das freie mischen von Sprachen und Paradigmen: Best fit
+    - Komplex, erfordert weiterführende Techniken wie Observerablity, Monitoring, Healthchecking, Alarming
+- Design Principles
+    - SOLID
+    - DRY

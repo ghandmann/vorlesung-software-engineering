@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.9">
+  <diagram name="Seite-1" id="O8wxCxvV_hymRJlP6cxK">
+    <mxGraphModel dx="1479" dy="819" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-62" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="70" y="350" width="780" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-2" value="Vorgänger Blockhash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-4" value="Header Daten" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="440" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-5" value="Block Daten" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-25" value="Eigener Blockhash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="360" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-37" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="400" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="4EWrugulDP6Ps7lBM1b0-38" target="4EWrugulDP6Ps7lBM1b0-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-38" value="Vorgänger Blockhash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="240" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-39" value="Header Daten" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="240" y="440" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-40" value="Block Daten" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="240" y="480" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-41" value="Eigener Blockhash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="240" y="360" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-43" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="400" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="4EWrugulDP6Ps7lBM1b0-44" target="4EWrugulDP6Ps7lBM1b0-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-44" value="Vorgänger Blockhash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="400" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-45" value="Header Daten" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="400" y="440" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-46" value="Block Daten" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="400" y="480" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-47" value="Eigener Blockhash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="400" y="360" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-49" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="400" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="4EWrugulDP6Ps7lBM1b0-50" target="4EWrugulDP6Ps7lBM1b0-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-50" value="Vorgänger Blockhash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="560" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-51" value="Header Daten" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="560" y="440" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-52" value="Block Daten" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="560" y="480" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-53" value="Eigener Blockhash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="560" y="360" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-56" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="400" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="4EWrugulDP6Ps7lBM1b0-57" target="4EWrugulDP6Ps7lBM1b0-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-57" value="Vorgänger Blockhash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="720" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-58" value="Header Daten" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="720" y="440" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-59" value="Block Daten" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="720" y="480" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4EWrugulDP6Ps7lBM1b0-60" value="Eigener Blockhash" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="720" y="360" width="120" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
