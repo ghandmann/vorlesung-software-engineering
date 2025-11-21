@@ -55,17 +55,90 @@
                 - Composition over Inheritence
                 - Diamant-Dilemma
             - Polymorphismus
+- Domain Driven Design
+    - Fachlichkeit über Technik (vgl. Agiles Manifest)
+        - Modellieren der Wirklichkeit
+        - Vereinfachung durch Abstraktion
+        - Die Selbe komplexe Sache kann auf unterschiedliche weise Abstrahiert werden
+            - Vgl. Erdball -> Globus -> Karte (Geographie, Politik, ...)
+    - Elemente von DDD
+        - Ubiquitos Language
+                - Finden und definieren einer gemeinsamen Sprache
+                - Eigene Voreingenommenheit aufbrechen
+                - Mißverständnisse identifizieren bevor sie zum Problem werden
+                - Verwenden dieser Sprache bei Kommunikation, Dokumnetation und im Code (Klassenname, Variablennamen, etc.)
+        - Bounded Context
+            - In der Fachlichkeit existierende Abgrenzungen
+            - Identifzieren von Grenzen zwischen den Modellen
+            - Erlauben die Verwendunge "der gleiche Sache" in anderem Kontext
+            - Erzeugen i.d.R. auch eine Konsistensgrenze, d.H. innerhalb eines Bounded Context kann Konsistenz garantiert werden
+                - Konsistenz über Bounded Context Grenzen kann i.d.R. nicht garantiert werden
+            - Beispiel: "Auftrag" im Kontext von "Einkauf", "Produktion" und "Marketing"
+        - Entities
+            - Eindeutig identifizierbar (ID)
+            - Haben eine Lebensdauer
+            - Sind i.d.R. veränderlich (mutable)
+            - Beispiel: Anstellungsverhältnis
+        - Value Objects
+            - Nicht eindeutig identifizierbar (anonym)
+            - Werden häufig wiederverwendet
+            - Sind unendlich gültig
+            - Sind i.d.R. nicht veränderlich (immutable)
+            - Beispiel: Position im Unternehmen (Entwickler, CEO, Hausmeister)
+        - Domain Events
+            - Ereignisse die in der Fachdomäne vorkommen
+            - Beispiel: Mitarbeiter entlassen
+        - Aggregate
+            - Kapselt Entities und Value Objects
+            - Nimmt über Methoden Kommandos entgegenen
+            - Stellt die eigene Konsistenz sicher (Invarianzen)
+            - Führt Kommandos nur aus, wenn sie im Aktuellen Zustand zulässig sind
+            - Emitiert Domain Event(s) als Reaktion auf ein Kommando
+    - Event Storming
+        - Es wird versucht zu ermitteln welche Ereignisse in der Fachdomäne vorkommen
+        - Wie diese Ereeignisse heißen
+        - Was passieren muss, dass diese Ereignisse ausgelöst werden
+        - Welche Daten diese Ereignisse transportieren
+        - Daraus ergeben sich die Domain Events die das Aggregate erzeugt
+        - Beispiel: Bewerber Eingestellt, Mitarbeiter Entlassen, Mitarbeiter befördert (Sprache! Kontext!)
+    - Domain Story Telling
+        - Durch Domain Story Telling soll herausgefunden werden:
+            - Welche Bounded Contexts miteinander interagieren (kommunizieren)
+            - Welche Informationen (Domain Events, Aggregates, Value Objects) sie austauschen
+            - Beispiel:
+                - Kandidat bewirbt sich bei HumanResources
+                - HumanResourcen bewertet Kandidate
+                - HumanResourcen übergibt relevante Kandidaten an Fachabteilung
+                - Fachabteilung wählt Kandidate für Vorstellungsgespräch aus
+                - HumanResourcen lädt Kandidat und Fachabteilung zum Vorstellungesgespräch ein
+    - Event Sourcing
+        - Klassische Datenbanken speichern immer nur den ist-Zustand, nicht die Historie die dazu geführt hat
+            - Vergleiche: User hat die eMail "epplers@hs-albsig.de", Frage: Welche eMail-Adresse hatte er früher?
+        - Bei EventSourcing wird nur die Kette der (Domain) Events gespeichert, daraus lässt sich der Zustand zu jedem beliebigen Zeitpunkt rekonstruieren
+        - Aus den Events lassen sich zusätzliche Informationen ableiten:
+            - Gibt es User, die öfter als 5 mal ihren Wohnort geändert haben?
+            - Gibt es User, die innerhalb von einer Stunde mehrere Bestellungen aufgegeben haben?
+            - Welche Bestellungen wurden innerhalb von 10 Minuten storniert?
+        - Der Speicherort für diese Events wir EventStore genannt
+        - Aus Performance-Gründen werden i.d.R. ReadModels voraus berechnet
+            - Beispiel: UserProfile, WatchHistory, WhatToWatchNext
+            - Wo Licht ist, ist auch Schatten: Stale ReadModels
+    - CQRS
+        - Command Query Responsibility Segregation
+        - Im wesentlichen die Unterscheiden zwischen schreibendem und lesendem Zugriff
+        - Kommandos ändern den Zustand
+            - Schlechter Skalierbar da Seiteneffektbehaftet -> evtl. synchronisation notwendig
+        - Queries geben nur eine sicht auf den Zustand (View) zurück
+            - Gute Skalierbar da Seiteneffektfrei
+        - Passt daher sehr gut zu DDD und EventSourcing
+            - Commands werden an das Aggregate übergeben
+            - Queries werden aus den ReadModels bedient
         
 - Softwarearchitekturen
     - Monolithische
     - Verteilte
     - Layered
     - Event-Driven
-- Domain Driven Design
-    - Fachlichkeit über Technik (vgl. Agiles Manifest)
-    - Ubitquitos Language
-    - Event Storming
-    - Bounded Context
 - Microservice Pattern
     - Form der Verteilten Architektur
     - Viele kleine Services
