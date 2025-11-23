@@ -134,6 +134,15 @@
             - Commands werden an das Aggregate übergeben
             - Queries werden aus den ReadModels bedient
         
+- Softwaretests
+    - Manuelles Testen
+        - Zeitaufwendig
+        - Fehleranfällig
+        - Unwirtschaftlich
+        - Bereits bei geringen Featureaufwand unmöglich
+    - Automatisiertes Testen
+        - Schnell(er)
+        - Kostengünstig
 - Softwarearchitekturen
     - Monolithische
     - Verteilte
@@ -148,3 +157,110 @@
 - Design Principles
     - SOLID
     - DRY
+- Containervirtualisierung
+    - Am Anfang stand da ein Server
+        - Für jeden Dienst ein eigener Server (HTTP, Mail, FTP, etc.)
+        - Geringe Auslastung der einzelnen Dienste -> Verschwendete Resourcen
+    - Hardware Virtualisierung
+        - Die selbe Hardware wird mehrfach genutzt
+        - Virtuelle Maschine "simuliert" die Hardware
+        - Vollständiges Betriebsystem "glaubt" es würde nativ laufen
+        - Bessere Auslastung der vorhandenen Hardware
+        - Overprovisioning - Was wenn doch mal alle dran kommen wollen?
+        - Großer Overhead (Windows Installation >20GB Hdd + XGB RAM)
+    - Prozess Virtualisierung aka. Containeriesierung
+        - Konzept aus dem Linux Kernel
+        - Cgroups: Limitieren von Resourcen (CPU, Arbeitsspeicher, I/O Zugriffe)
+        - Namespaces: Steuern von Sichtbarkeit was auf dem System verfügbar ist
+            - Namespaces funktionieren wie "Gruppen"
+            - Nur die Prozesse im selben Namespace können sich gegenseitig sehen
+            - Unterschiedliche Arten von Namespaces:
+                - Prozess-Namespace
+                - Network-Namespace
+                - Mount-Namespace
+            - Namespace-Nesting: Von außen kann man reinschauen, von innen aber nicht raus schauen
+        - Cgroups & Namespaces => Prozess Virtualisierung
+            - Prozesse laufen "isoliert" in einer "sandbox"
+            - Prozesse starten und beenden ist günstig (vgl. booten einer VM)
+            - Alles läuft auf dem selben Host-Kernel
+            - Jeder Prozess sieht aber nur was in seinem "Container" los ist
+        - Warum ich vermeide "Docker" zu sagen
+            - Hat Containeriesierung populär gemacht
+            - Ist aber im wesentlichen eine leere Hülle, eine Marke
+            - Alle Container-Relevanten-Technologien und Konzepte sind mittlerweile OpenSource bei der CNCF (Cloud Native Compute Foundation) und oder OCI (Open Container Initiative)
+                - Container-Runtime: containerd, crio
+                - Image-Format: OCI Image Format
+                - Diverse Implementierungn für Image-Repositories (z.B. quay.io, GitLab, GitHub)
+                - Alternative Client-Runtimes: z.B. `podman`
+            - Docker betreibte nach wie vor viel Infrastruktur
+                - hub.docker.com ist immer noch Hauptanlaufpunkt für Images
+                    - Wird aber kritischer gesehen, z.B. wegen Rate-Limiting seit April 2025
+        - Image vs. Container
+            - Das Image ist die Vorlage für einen Container
+            - Kann fertig bezogen werden (z.B. hub.docker.com) oder selbst gebaut werden (`Dockerfile`/`Containerfile`)
+            - Images sind unveränderlich, viele Container können auf dem selben Image basieren ohne das Konflikte entstehen
+            - Im Container gemacht Änderungen fließen nicht zurück ins Image
+            - Images bestehen aus Layern
+                - Vergleich: Klarsichtfolien
+                - Wichtig: Dateien die einmal vorhanden waren, bleiben erhalten
+                    - Tool: https://github.com/wagoodman/dive
+                - Jedes Layer wird durch einen SHA256 hash identifiziert
+                - Es wird eine cryptografische Kette aufgebaut (vgl. git, blockchain)
+                - Änderungen in einem tieferen Layer änder auch alle nachfolgenden
+                - Hashes werden für caching benutzt: Selber Hash == unverändertes Image/Layer
+            - Container sind vergänglich, "aus dem Staub, in den Staub"
+                - Daher sollten Container stateless gedacht werden
+                - Container können jederzeit aus einem Image neu erzeugt werden
+                - Problem: Was wenn doch Daten anfallen? z.B. Datenbanken?
+                    - Auslagern der Daten in sog. `volumes`
+                        - Wahlweise andere Container
+                        - Verzeichnisse auf dem Host-System
+        - Erzeugen von Images
+            - `Dockerfile`/`Containerfile` [Reference](https://docs.docker.com/reference/dockerfile/)
+                - `FROM $BaseImage` / `FROM scratch`
+                - Jedes Statement erzeugt ein neues Layer
+                    - `RUN ...`
+                    - `COPY ...`
+            - Images bekommen einen Namen und ein Tag
+                - Achtung: `latest` Tag ist ist nicht stabil. 
+            - `docker build --tag my-container-image:1.0 .`
+            - Der Build-Context
+            - `.dockerignore`
+        - Images von hub.docker.com oder jeder anderen `$ImageRegistry`
+            - Due dilligence: Will ich das Image wirklich benutzen?
+                - Effektiv wird Fremdoce auf dem eigenen System ausgeführt!
+                - Docker ist nur hoster
+                - Typosquatting
+            - `docker pull ubuntu:24.04`
+            - Fully Qualified Image Name:
+                - `ubuntu:24.04` -> `docker.io/library/ubuntu.24.04`
+                - `mcr.microsoft.com/vscode/devcontainers/javascript-node:0-16-bullseye`, mcr: Microsoft Container Registry
+                - `quay.io/keycloak/keycloak`, quai.io: Red Hat Container Registry
+            - Lokale Images Anzeigen: `docker images`
+        - Containervirtualisierung ist keine Security Lösung!
+            - Jeder Prozess teilt sich den Host-Kernel: Sicherheitslücken im Host-Kernel können auch im Container ausgenutzt werden
+                - Worst case: Sandbox-Escape!
+            - Wenn ein Container-Prozess als `root` läuft, läuft er wirklich als `root`
+            - Alle User die container via `docker` starten dürfen, können effektiv das **GESAMTE** Dateisystem sehen
+                - `docker run -it --rm -v /:/host ubuntu:24.04 /bin/bash`
+        - Sichere Container-Images:
+            - Basis-Image regelmäßig aktualisieren (ist genauso eine dependency wie ein JavaScript Modul) (z.B. Dependabot, Renovate)
+            - Container-Scanner einsetzen: [Docker Scout](https://docs.docker.com/scout/), [Trivy](https://trivy.dev)
+
+
+
+
+- Continious Integration, Continious Deployment
+
+- Eher Ausklammern:
+    - Domain Driven Design
+        - Fachlichkeit über Technik (vgl. Agiles Manifest)
+        - Ubitquitos Language
+        - Event Storming
+        - Bounded Context
+    - Microservice Pattern
+        - Form der Verteilten Architektur
+        - Viele kleine Services
+        - Typischerweise bildet ein Service einen BoundedContext ab
+        - Ermöglicht das freie mischen von Sprachen und Paradigmen: Best fit
+        - Komplex, erfordert weiterführende Techniken wie Observerablity, Monitoring, Healthchecking, Alarming
