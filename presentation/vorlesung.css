@@ -40,3 +40,22 @@ img[alt~="center"] {
     margin: auto;
     display: block;
 }
+
+footer, section::after {
+    font-size: 0.6em;
+    border-top: solid 1px rgb(160, 168, 187);
+    height: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 38px;
+}
+section::after {
+    font-weight: bold;
+}
+
+section.lead footer, section.chapter footer {
+    display: none;
+}
+section.lead::after, section.chapter::after {
+    display: none;
+}
