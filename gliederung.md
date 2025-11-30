@@ -133,7 +133,67 @@
         - Passt daher sehr gut zu DDD und EventSourcing
             - Commands werden an das Aggregate übergeben
             - Queries werden aus den ReadModels bedient
-        
+- Softwarearchitektur
+    - Was ist das?
+        - Beschreibt den High-Level Aufbau der Software
+            - Welche Komponenten und Module gibt es?
+            - Welche Abhängigkeiten haben diese untereinander?
+        - Ziel: Erzeugen einer "sinnvollen" Struktur
+            - Verantwortlichkeiten klären
+            - Vermeiden von Spaghetti-Code
+    - Arten von Softwarearchitektur
+        - Der Monolith
+            - Das gesamte Programm ist in einer einzelnen ausführbaren Datei
+            - Der Quellcode kann trotzdem sinnvoll strukturiert sein und verschiedene Module nutzen
+            - Schlechtfall: Big ball of mud
+                - Beliebige Teile der Software greifen auf beliebige andere Teile zu
+            - Updates müssen auf dem Zielsystem eingespielt werden
+            - Geringe Komplexität
+            - Geringe Skalierbarkeit
+            - Beispiele: MS Word, Photoshop, Linux-Kernel
+        - Client-Server Architektur
+            - Die Anwendung is fundamental aufgespalten in ein Client- und eine ServerSeite
+                - Der Client ist typischerweise für die Anzeige verantwortlich
+                - Der Server liefert die Daten und Verarbeitung der Daten
+            - Datenaustausch zwischen Client und Server findet i.d.R. via Netzwerk statt
+            - Updates können zum Teil rein Serverseitig durchgeführt werden.
+                - Änderungen am Client müssen natürlich auf dem Zielsystem erfolgen (Ausnahme: WebAnwendungen)
+            - Mittlere Komplexität
+            - Gute Skalierbarkeit
+            - Beispiel: Typische WebAnwendungen, Business-Anwendungen bei denen das Frontend direkt mit der Datenbank spricht
+        - Verteilte Architektur
+            - Dabei werden wichtige Komponenten der Anwendung als eigene Prozesse ausgelagert
+            - Kommunikation zwischen den Komponenten findet dann nicht mehr "direkt" via Funktionsaufruf statt
+                - IPC (InterProcessCommunication) z.B. mit MessageQueues, SharedMemory oder Dateien
+                - RPC (RemoteProcedureCalls) via Netzwerk z.B. gRPC
+                - HTTP API basiert
+            - Hohe Komplexität um das Zusammenspiel der einzelnen Anwendungen sicher zu stellen
+            - Hohe Skalierbarkeit, da jede Anwendung für sich skalieren kann
+            - Updates erfordern i.d.R. konsens über das gesamte System
+                - Z.B. IoT Systeme mit Sensoren "in the wild" (Arktis, Öltanker, etc.)
+            - Beispie: Netflix, Amazon, DB Systems
+        - "Weiche" Architektur Arten
+            - Layered Architektur
+                - Die Komponenten der Software werden in Schichten aufgeteilt
+                    - Z.B. Kommunikations-Schicht, Business-Logik-Schicht, Kompatibilitäts-Schicht
+                    - Schichten dürfen nur mit ihren direkten "Nachbarn" kommunizieren und Daten austauschen
+                - Beispiel: OSI Schichtenmodell, DomainDrivenDesign
+            - Modulare Architektur
+                - Die Software wird in Module zerlegt
+                - Über die Module werden auch Sichtbarkeiten/Abhängigkeiten definiert
+                - Getrennte Verantwortlichkeiten
+                - Soll die Wiederverwendbarkeit erhöhen
+            - Ereignisgetriebene Architektur
+                - Das System "wartet" auf Ereignisse auf diese es dann reagiert
+                - Das System kann auch selbst notwendige Ereignisse erzeugen
+                - Resourcenschonend, da Polling verhindert wird
+                - Beispiele: EventSourcing, Mqtt, IoT (Sensoren)
+
+        - Matrix:
+            - Updatebar
+            - Skalierbar
+            - Wartbarkeit
+            - Aufwand
 - Softwaretests
     - Manuelles Testen
         - Zeitaufwendig
@@ -143,11 +203,6 @@
     - Automatisiertes Testen
         - Schnell(er)
         - Kostengünstig
-- Softwarearchitekturen
-    - Monolithische
-    - Verteilte
-    - Layered
-    - Event-Driven
 - Microservice Pattern
     - Form der Verteilten Architektur
     - Viele kleine Services
