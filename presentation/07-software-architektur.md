@@ -67,7 +67,7 @@ paginate: true
 
 - Mittlere Komplexität
 - Gute Skalierbarkeit
-- Beispiele: Typische WebAnwendungen, Business-Anwendungen bei denen das Frontend direkt mit der Datenbank spricht
+- Beispiele: Typische WebAnwendungen, Business-Anwendungen bei denen das Frontend direkt mit der Datenbank spricht, Email-Client & Email-Server
 
 ---
 
@@ -94,7 +94,7 @@ paginate: true
 
 Dabei handelt es sich nicht um "standalone" Konzepte, wie Software Strukturiert werden kann.
 
-Sondern um Ideen die genauso z.B. in einer Verteilten wie Monolithischen Softwarearchitektur zum Einsatz kommen könnten.
+Sondern um Ideen die genauso z.B. in einer Verteilten wie monolithischen Softwarearchitektur zum Einsatz kommen könnten.
 
 ---
 
