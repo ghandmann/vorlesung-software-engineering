@@ -53,9 +53,9 @@ section::after {
     font-weight: bold;
 }
 
-section.lead footer, section.chapter footer {
+section.lead footer, section.chapter footer, section.image-only footer {
     display: none;
 }
-section.lead::after, section.chapter::after {
+section.lead::after, section.chapter::after, section.image-only::after {
     display: none;
 }
