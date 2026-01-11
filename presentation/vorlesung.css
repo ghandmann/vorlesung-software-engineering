@@ -5,7 +5,9 @@
 section {
     font-size: 24pt;
 }
-section h1, section h2 {
+
+section h1,
+section h2 {
     color: #566691ff;
 }
 
@@ -14,10 +16,12 @@ section.lead {
         font-size: 64pt;
     }
 }
+
 section {
     padding: 40px;
     padding-top: 20px;
 }
+
 section h1 {
     font-size: 38pt;
 }
@@ -31,7 +35,8 @@ section.chapter {
         margin-top: 20%;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         text-align: center;
     }
 }
@@ -41,7 +46,8 @@ img[alt~="center"] {
     display: block;
 }
 
-footer, section::after {
+footer,
+section::after {
     font-size: 0.6em;
     border-top: solid 1px rgb(160, 168, 187);
     height: 40px;
@@ -49,13 +55,30 @@ footer, section::after {
     padding-bottom: 0px;
     line-height: 38px;
 }
+
 section::after {
     font-weight: bold;
 }
 
-section.lead footer, section.chapter footer, section.image-only footer {
+section.lead footer,
+section.chapter footer,
+section.image-only footer {
     display: none;
 }
-section.lead::after, section.chapter::after, section.image-only::after {
+
+section.lead::after,
+section.chapter::after,
+section.image-only::after {
     display: none;
+}
+
+
+section.code-split pre {
+    width: 49%;
+    float: left;
+    margin: 5px;
+}
+
+section.code-split pre:last-child {
+    float: right;
 }
