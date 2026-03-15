@@ -56,6 +56,7 @@ backgroundImage: url('./images/background.svg')
 - Pull-Requests Wilkommen!
 - Ideen? Verbesserungen? Kritik?
   Immer her damit!
+- Nutzen Sie bitte die Möglichkeit zur Evaluation!
 
 ---
 
