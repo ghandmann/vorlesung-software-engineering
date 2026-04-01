@@ -205,10 +205,11 @@ Theoretisch ist so eine Testabdeckung von 100% möglich. Diese ist aber aus wirt
 
 <!-- _class: image-only -->
 
+![bg right:33%](./images/testabdeckung-ritter-meme.jpg)
+
 # Testabdeckung / Code Coverage
 
-Außerdem gibt diese Metrik ein trügerisches Bild: Code der zu 100% "abgedeckt" ist, muss nicht Fehlerfrei sein:
-
+100% Testabdeckung bedeutet nicht fehlerfrei!
 ```javascript
 function divide(a, b) {
     return a/b;
