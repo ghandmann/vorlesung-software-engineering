@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
       - name: Convert markdown to PDF slides
-        run: docker run --rm -e MARP_USER="$(id -u):$(id -g)" -v "${{ github.workspace }}/presentation:/home/marp/app" marpteam/marp-cli:main --allow-local-files --theme-set vorlesung.css --pdf -I . -o slides/
+        run: docker run --rm -e MARP_USER="$(id -u):$(id -g)" -v "${{ github.workspace }}/presentation:/home/marp/app" marpteam/marp-cli@sha256:8882eaad0cb629abfe51470525d8e19b2104a5d736615da2f2b6455fa0ae40ef --allow-local-files --theme-set vorlesung.css --pdf -I . -o slides/
       - name: Release slides
         run: gh release create --title "Vorlesungsfolien $GITHUB_REF_NAME" $GITHUB_REF_NAME presentation/slides/*.pdf
         env:
