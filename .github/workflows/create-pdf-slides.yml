@@ -16,4 +16,4 @@ jobs:
       - name: List the results
         run: ls -la ${{ github.workspace }}/presentation
       - name: Release slides
-        run: gh create release $GITHUB_REF_NAME presentation/*.pdf
+        run: gh release create -d $GITHUB_REF_NAME presentation/*.pdf
