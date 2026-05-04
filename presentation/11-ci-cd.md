@@ -2,7 +2,7 @@
 marp: true
 theme: vorlesung
 backgroundImage: url('./images/background.svg')
-footer: Vorlesung Software Engineering Wintersemester 25/26
+footer: Vorlesung Software Engineering Sommersemester 2026
 paginate: true
 ---
 
