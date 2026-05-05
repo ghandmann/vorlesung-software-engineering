@@ -11,13 +11,18 @@ Diese werde nach und nach in dieses Repository eingepflegt. Daher sollte ein lok
 
 ## Fahrplan
 
-1) Versionskontrolle mit Git
+1) Versionskontrolle mit Git 1/3
+1) Versionskontrolle mit Git 2/3
+1) Versionskontrolle mit Git 3/3
 1) Workflows mit git und GitHub
 1) Software Projektmanagement
 1) Anforderungsanalyse (Eigene Folie WIP)
-1) Programmierparadigmen
+1) Programmierparadigmen 1/2
+1) Programmierparadigmen 2/2
 1) Domain Driven Design
 1) Softwarearchitektur
 1) Software Testing
-1) Containervirtualisierung
+1) Containervirtualisierung 1/2
+1) Containervirtualisierung 2/2
 1) Design Principles
+1) Clean Code
