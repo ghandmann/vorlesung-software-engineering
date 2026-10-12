@@ -125,7 +125,7 @@ Einer muss seine arbeit "umsortieren"
 - Merge findet nicht mehr lokal statt, sondern "im Remote"
 - Ermöglicht zusätzliche Schritte:
     - Code Reviews
-    - Continious Integration/Continious Deployment
+    - Continuous Integration/Continuous Deployment
     - Security Scans (`npm audit`, Dependabot, etc.)
 - Siehe [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow)
 

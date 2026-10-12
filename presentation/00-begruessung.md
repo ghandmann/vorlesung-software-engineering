@@ -47,7 +47,7 @@ paginate: true
 - Software Design Patterns
 - Software Craftmanship
 - Containerisierung / Prozess Virtualisierung
-- Continious Integration / Continious Delivery
+- Continuous Integration / Continuous Delivery
 
 ---
 
